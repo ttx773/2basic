@@ -41,11 +41,6 @@ body {
   background-color: var(--color-background-body);
 }
 
-main{
-
-}
-
-
 button {
   background-color: transparent;
   outline: none;
@@ -63,7 +58,19 @@ p,h1,h2,h3,h4,h5,h6 {
 
 
 .header {
+  position: relative;
   background-color: var(--color-background-header);
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  background: var(--color-background-header);
+  left: -32px;
+  right: -32px;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
 }
 
 .header__container{
@@ -202,6 +209,14 @@ p,h1,h2,h3,h4,h5,h6 {
     gap: 16px;
     column-gap: 36px;
     padding: 0 32px 0 32px;
+  }
+
+  .header {
+    background-color: transparent;
+  }
+
+  .header::before {
+    background-color: transparent;
   }
 
   .header__container{
